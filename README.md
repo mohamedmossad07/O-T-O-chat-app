@@ -1,6 +1,6 @@
 > #  One-To-One Chat Application
 
-### This `one-to-one` web chat application is not designed to compete with `WhatsApp` or `Telegram`. Instead, it provides a simple means to establish text communication between two users. This app does not have a lot of features, only the basic functionalities required:  
+ This `one-to-one` web chat application is not designed to compete with `WhatsApp` or `Telegram`. Instead, it provides a simple means to establish text communication between two users. This app does not have a lot of features, only the basic functionalities required:  
 
 - Signup, Login, Logout  
 - Real-time sending and receiving of messages  

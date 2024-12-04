@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Chat App</title>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <!--===============================================================================================-->
+    <link href="images/icons/chat.png" rel="icon" type="image/png"/>
+    <!--===============================================================================================-->
+    <link href="fonts/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="css/util.css" rel="stylesheet" type="text/css">
+    <link href="css/chat.css" rel="stylesheet" type="text/css">
+    <!--==============================================================================================-->
+</head>
+<body>
+<div hidden="hidden" id="username" th:text="${username}"></div>
+<div class="" id="chat-page">
+    <div class="container">
+        <!-- Page header start -->
+        <div class="page-title">
+            <div class="row gutters">
+                <div class="col-9">
+                    <h5 class="title">Chat App</h5>
+                </div>
+                <div class="col-3 text-right align-content-center font-weight-bold"  style="font-family: cursive;">
+                    <span class="hov-pointer" id="logout-btn">
+                        Logout
+                        <i class="fa fa-solid fa-arrow-right fs-15"></i>
+                    </span>
+                </div>
+            </div>
+        </div>
+        <!-- Page header end -->
+
+        <!-- Content wrapper start -->
+        <div class="content-wrapper">
+
+            <!-- Row start -->
+            <div class="row gutters">
+
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
+
+                    <div class="card m-0">
+
+                        <!-- Row start -->
+                        <div class="row no-gutters">
+                            <div class="col-xl-4 col-lg-4 col-md-4 col-sm-3 col-3">
+                                <div class="users-container">
+                                    <ul class="users" id="chat-users-list">
+                                        <li class="person" data-chat="person5" id="chat-person">
+                                            <div class="user">
+                                                <img alt="Retail Admin" src="images/avatars/avatar5.png">
+                                                <span class="status offline"></span>
+                                            </div>
+                                            <p class="name-time">
+                                                <span class="name fullname">Michael Jordan</span>
+                                                <span class="username hidden"></span>
+                                                <span class="has-messages hidden">
+														<i class="fa fa-bell fs-15 text-danger"></i>
+												</span>
+                                            </p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
+                                <div class="hidden" id="chat-right-side">
+                                    <div class="selected-user" id="chat-person-name">
+                                        <span>To: <span class="name" data-username="text">Emily Russell</span></span>
+                                    </div>
+                                    <div class="chat-container">
+                                        <ul class="chat-box" id="chat-messages-list">
+                                            <li class="hidden chat-left chat-msg" id="chat-message-him">
+                                                <div class="chat-avatar">
+                                                    <img alt="Retail Admin" src="images/avatars/avatar3.png">
+                                                    <div class="chat-name">Russell</div>
+                                                </div>
+                                                <div class="chat-text">Hello, I'm Russell.
+                                                    <br>How can I help you today?
+                                                </div>
+                                                <div class="chat-hour"><span class="hour">08:55</span> <span
+                                                        class="fa fa-check-circle fs-10"></span></div>
+                                            </li>
+                                            <li class="hidden chat-right chat-msg" id="chat-message-me">
+                                                <div class="chat-hour"><span class="hour">08:55</span> <span
+                                                        class="fa fa-check-circle fs-10"></span></div>
+                                                <div class="chat-text">Hi, Russell
+                                                    <br> I need more information about Developer Plan.
+                                                </div>
+                                                <div class="chat-avatar">
+                                                    <img alt="Retail Admin"
+                                                         src="images/avatars/avatar/avatar3.png">
+                                                    <div class="chat-name">Sam</div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <div id="chat-input-container" class="d-flex align-items-center justify-content-between form-group mt-3 mb-0">
+                                            <textarea class="form-control" id="chat-textarea-input" placeholder="Type your message here..."
+                                                      rows="3"></textarea>
+                                            <button class="h-100 d-block p-2 ml-1 btn fs-30 text-primary send-btn"
+                                                    id="send-btn">
+                                                <i class="fa fa-regular fa-paper-plane"></i>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Row end -->
+                    </div>
+
+                </div>
+
+            </div>
+            <!-- Row end -->
+
+        </div>
+        <!-- Content wrapper end -->
+
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="vendor/sockjs.min.js"></script>
+<script src="vendor/stomp.min.js"></script>
+<script src="js/chat.js"></script>
+</body>
+</html>

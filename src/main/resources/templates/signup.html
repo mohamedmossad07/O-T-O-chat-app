@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Signup</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="images/icons/login.png"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link rel="stylesheet" type="text/css" href="css/loginAndSignup.css">
+    <!--==============================================================================================-->
+</head>
+<body>
+<div id="signup-page" class=" limiter">
+    <div id="register_page" class="container-login100  ">
+        <div class="wrap-login100">
+            <form class="login100-form validate-form p-l-55 p-r-55 p-t-178" method="post">
+					<span class="login100-form-title">
+						Register
+					</span>
+                <div class="m-b-16">
+                    <div class="wrap-input100 validate-input m-b-3" data-validate="Please enter username">
+                        <input class="input100 fullname_input" type="text"  name="fullname" placeholder="Full name">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <ul class="p-l-24 m-b-5 input-alert-container" >
+                        <li class="input-alert"></li>
+                    </ul>
+                </div>
+                <div class="m-b-16">
+                    <div class="wrap-input100 validate-input m-b-3">
+                        <input class="input100 username_input" type="text" name="username" placeholder="Username">
+                        <span class="focus-input100"></span>
+                    </div>
+                       <ul class="p-l-24 m-b-5 input-alert-container" th:if="${errors!=null && errors.username!=null && ! #lists.isEmpty(errors.username)} ">
+                            <li class="input-alert" th:each="err : ${errors.username}" th:text="${err}"></li>
+                        </ul>
+                </div>
+                <div class="m-b-16">
+                    <div class="wrap-input100 validate-input m-b-3" data-validate = "Please enter password">
+                        <input class="input100 password_input" type="password" name="pass" placeholder="Password">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <ul class="p-l-24 m-b-5 input-alert-container" >
+                        <li class="input-alert"></li>
+                    </ul>
+                </div>
+                <div class="m-b-16">
+                    <div class="wrap-input100 validate-input m-b-3" data-validate = "Please enter password">
+                        <input class="input100 confirm_password_input" type="password" name="confirm_pass" placeholder="Confirm Password">
+                        <span class="focus-input100"></span>
+                    </div>
+                    <ul class="p-l-24 m-b-5 input-alert-container" >
+                        <li class="input-alert"></li>
+                    </ul>
+                </div>
+                <div class="container-login100-form-btn">
+                    <button class="login100-form-btn submit_btn">
+                        Register
+                    </button>
+                </div>
+
+                <div class="flex-col-c p-t-90 p-b-40">
+						<span class="txt1 p-b-9">
+							Have an account?
+						</span>
+
+                    <a href="/login" class="txt3 signup-login-change" id="login-now-btn">
+                        Login now
+                    </a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--===============================================================================================-->
+<script src="vendor/jquery/jquery-3.2.1.min.js"></script>
+<script src="js/loginAndSignup.js"></script>
+</body>
+</html>

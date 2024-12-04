@@ -1,4 +1,3 @@
-
 > > #  One-To-One Chat Application
 
 ### This `one-to-one` web chat application is not designed to compete with 
